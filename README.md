@@ -1,4 +1,4 @@
-# Utility Sofware
+# Utility Software
 
 ## A utility I developed for a phone tech service
 
