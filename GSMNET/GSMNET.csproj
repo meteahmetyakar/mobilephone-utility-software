@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="black-resourcesforbitches-black-x.png" />
+    <None Remove="logo.png" />
+    <None Remove="tire2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="black-resourcesforbitches-black-x.png" />
+    <Resource Include="logo.png" />
+    <Resource Include="tire2.png" />
+  </ItemGroup>
+
+</Project>

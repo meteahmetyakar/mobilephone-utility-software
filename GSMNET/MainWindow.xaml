@@ -1,0 +1,106 @@
+﻿<Window x:Class="GSMNET.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GSMNET"
+        mc:Ignorable="d"
+        Title="Gsm Net"
+        Height="726" Width="874"
+        Background="Aqua" WindowStartupLocation="CenterScreen" SizeToContent="Manual" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
+    <Grid RenderTransformOrigin="0.5,0.5" Background="#FF4A3E4F">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="377*"/>
+            <ColumnDefinition Width="708*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="False" Margin="0,0,0,693" Grid.ColumnSpan="2" Background="#FF668B9C">
+            <Label x:Name="appName" Content="GSM NET Tool V1.0" DockPanel.Dock="Left" Width="210" FontWeight="DemiBold" Height="35" FontSize="20" Foreground="#FF2C3032"/>
+            <Border BorderThickness="1" BorderBrush="#00000000" DockPanel.Dock="Right" Width="18"/>
+            <Button x:Name="quitBtn" Content="" Click="quitBtn_Click" DockPanel.Dock="Right" Width="28" BorderBrush="#00707070" Foreground="{x:Null}" Cursor="Hand">
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+                <Button.Background>
+                    <ImageBrush ImageSource="/black-resourcesforbitches-black-x.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="minimizeBtn" Content="" Click="minimizeBtn_Click" DockPanel.Dock="Right" Width="27" BorderBrush="#00707070" Foreground="{x:Null}" Cursor="Hand">
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+                <Button.Background>
+                    <ImageBrush ImageSource="/tire2.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+
+        <StackPanel Margin="20,363,36,48" Background="#FF63757E">
+
+            <Label x:Name="lblBrand_Copy" Content="&#x9;AYGIT BİLGİLERİ" Height="33" FontSize="16" FontWeight="DemiBold" Foreground="White" Background="#FF668B9C"/>
+
+            <Label x:Name="lblBrand" Content="Marka: " Height="57" FontSize="16" FontWeight="DemiBold" Foreground="White"/>
+            <Label x:Name="lblModel" Content="Model: " Height="57" FontSize="16" FontWeight="DemiBold" Foreground="White"/>
+            <Label x:Name="lblVersion" Content="Sürüm: " Height="57" FontSize="16" FontWeight="DemiBold" Foreground="White"/>
+            <Label x:Name="lblPBoard" Content="p.Board: " FontSize="16" Height="46" FontWeight="DemiBold" Foreground="White"/>
+            <Label x:Name="lblId" Content="Id: " Height="52" FontSize="16" FontWeight="DemiBold" Foreground="White"/>
+            <StackPanel Height="100"/>
+
+        </StackPanel>
+        <Button x:Name="btnOpenDiag" Content="Diag Port Aç" HorizontalAlignment="Left" Margin="20,40,0,0" VerticalAlignment="Top" Height="36" Width="188" Click="btnOpenDiag_Click" Background="#FF63757E" Foreground="White" FontSize="18" FontWeight="DemiBold" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <Button x:Name="btnFastbootMode" Content="Fastboot Modu" HorizontalAlignment="Left" Margin="19,82,0,0" VerticalAlignment="Top" Height="36" Width="189" Click="btnFastbootMode_Click" Background="#FF63757E" Foreground="White" FontSize="18" FontWeight="DemiBold" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <Button x:Name="btnGetDevices" Content="Cihazları Listele" HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" Height="36" Width="188" Click="btnGetDevices_Click" Background="#FF63757E" Foreground="White" FontSize="18" FontWeight="DemiBold" RenderTransformOrigin="0.448,-0.443" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <ComboBox x:Name="cbDevices" HorizontalAlignment="Left" Margin="20,262,0,0" VerticalAlignment="Top" Width="188" SelectionChanged="cbDevices_SelectionChanged" Height="34" Cursor="Hand">
+            <ComboBox.FocusVisualStyle>
+                <Style/>
+            </ComboBox.FocusVisualStyle>
+        </ComboBox>
+        <Button x:Name="btnPushApk" Content="Apk Kopyala" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Height="36" Width="542" Click="btnPushApk_Click" Background="#FF63757E" Foreground="White" FontSize="20" FontWeight="DemiBold" Grid.Column="1" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <Button x:Name="btnInstall" Content="Apk Yükle" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" Height="36" Width="542" Click="btnInstall_Click" RenderTransformOrigin="0.486,0.214" Background="#FF63757E" Foreground="White" FontSize="20" FontWeight="DemiBold" Grid.Column="1" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <TextBox x:Name="tbApkPathToPush" HorizontalAlignment="Left" TextAlignment="Left" VerticalContentAlignment="Center"  Margin="10,260,0,0" Text="/sdcard/yedek" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="38" Foreground="Black" BorderBrush="#FF4F78F1" FontSize="18" Grid.Column="1"/>
+        <Button x:Name="btnFlashRecovery" Content="Recovery Flash" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Height="36" Width="542" Click="btnFlashRecovery_Click" Background="#FF63757E" Foreground="White" FontSize="20" FontWeight="DemiBold" Grid.Column="1" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <Button x:Name="btnResetPartition" Content="Partition Sıfırla" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Height="36" Width="542" Click="btnResetPartition_Click" Background="#FF63757E" Foreground="White" FontSize="20" FontWeight="DemiBold" Grid.Column="1" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <Button x:Name="btnEraseFrp" Content="FRP Sil" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" Height="36" Width="542" Click="btnEraseFrp_Click" Background="#FF63757E" Foreground="White" FontSize="20" FontWeight="DemiBold" Grid.Column="1" Cursor="Hand">
+            <Button.FocusVisualStyle>
+                <Style/>
+            </Button.FocusVisualStyle>
+        </Button>
+        <Border BorderThickness="1" Grid.Column="1" Margin="15,463,23,61">
+            <Border.BorderBrush>
+                <ImageBrush/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <ImageBrush ImageSource="/logo.png" TileMode="None"/>
+            </Border.Background>
+        </Border>
+
+    </Grid>
+</Window>
